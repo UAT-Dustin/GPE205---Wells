@@ -154,7 +154,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 1
 --- !u!114 &4861426307770421130
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   moveSpeed: 10
   turnSpeed: 270
   mover: {fileID: 637195873065149267}
-  fireRate: 1
+  fireRate: 0.25
   fireCounter: 0
   canFire: 0
   firePoint: {fileID: 1417865094769623447}

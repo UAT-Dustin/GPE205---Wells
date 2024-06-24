@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Pawn : MonoBehaviour
 {
+    [Header("Player Movement")]
     // Variable for move speed
     public float moveSpeed;
     // Variable for turn speed
     public float turnSpeed;
     // Variable to hold our Mover
     public Mover mover;
+
+    [Header("Shooting Logic")]
     // Variable for Rate of Fire
     public float fireRate;
     [HideInInspector] public float fireCounter;

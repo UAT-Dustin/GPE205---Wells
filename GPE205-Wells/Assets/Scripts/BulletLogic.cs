@@ -15,9 +15,19 @@ public class BulletLogic : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-
-    void Update()
+    // rb.velocity is an absolute velocity. Since we are simulating physics I am using the FixedUpdate()
+    // this should not be multiplied by Time.deltaTime
+    void FixedUpdate()
     {
-        rb.velocity += transform.forward * bulletSpeed * Time.deltaTime;
+        // Makes the bullet travel
+        rb.velocity = transform.forward * bulletSpeed;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
