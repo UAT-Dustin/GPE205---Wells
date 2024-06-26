@@ -36,17 +36,13 @@ public class TankPawn : Pawn
     }
 
     // Instantiations bullet when the shooting function is called
-    public override void Shooting()
+    public override void Shoot()
     {
-        if (canFire)
+        if(canFire)
         {
-            Instantiate(bullet, firePoint.position, firePoint.rotation);
+            shooter.Shoot(shellPrefab, fireForce, damageDone, shellLifespan);
             fireCounter = 0;
             canFire = false;
-        }
-        else
-        {
-            return;
         }
     }
 

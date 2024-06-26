@@ -8,7 +8,7 @@ public class PlayerController : Controller
     public KeyCode moveBackwardKey;
     public KeyCode rotateClockwiseKey;
     public KeyCode rotateCounterClockwiseKey;
-    public KeyCode shootingKey;
+    public KeyCode shootKey;
 
     public override void Start()
     {
@@ -59,9 +59,9 @@ public class PlayerController : Controller
             pawn.RotateCounterClockwise();
         }
 
-        if (Input.GetKey(shootingKey))
+        if (Input.GetKey(shootKey))
         {
-            pawn.Shooting();
+            pawn.Shoot();
         }
     }
 

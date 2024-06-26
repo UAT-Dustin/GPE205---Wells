@@ -11,10 +11,15 @@ public abstract class Pawn : MonoBehaviour
     public Mover mover;
 
     [Header("Shooting Logic")]
-    // Variable for Rate of Fire
+    public Shooter shooter;
+    public GameObject shellPrefab;
+    public float fireForce;
+    public float damageDone;
+    public float shellLifespan;
+
     public float fireRate;
-    [HideInInspector] public float fireCounter;
-    [HideInInspector] public bool canFire = true;
+    public float fireCounter;
+    public bool canFire = true;
 
     // Firepoint Transform
     public Transform firePoint;
@@ -24,6 +29,7 @@ public abstract class Pawn : MonoBehaviour
     public virtual void Start()
     {
         mover = GetComponent<Mover>();
+        shooter = GetComponent<Shooter>();
     }
 
     // Called per update
@@ -36,5 +42,5 @@ public abstract class Pawn : MonoBehaviour
     public abstract void MoveBackward();
     public abstract void RotateClockwise();
     public abstract void RotateCounterClockwise();
-    public abstract void Shooting();
+    public abstract void Shoot();
 }
